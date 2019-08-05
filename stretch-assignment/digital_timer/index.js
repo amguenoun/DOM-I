@@ -75,6 +75,7 @@ function secondTensPlus() {
 //Making Buttons
 const startButton = document.createElement('button');
 startButton.textContent = "Touch Me to Start!";
+startButton.style.margin = "2% 0%";
 const resetButton = document.createElement('button');
 resetButton.textContent = "Touch Me to Reset!";
 
@@ -107,4 +108,10 @@ function start() {
     clockTicker = window.setInterval(startClock, 10);
 }
 
-console.log(msTens);
+
+//Styling buttons
+const buttons = document.querySelectorAll('button');
+buttons.forEach(item => {
+    item.style.color = "darkgreen";
+    item.style.padding = "1% 3%";
+});
