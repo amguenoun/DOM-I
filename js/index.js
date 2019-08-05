@@ -101,6 +101,7 @@ bottomTextContent.forEach((item, index) => {
 const contactHeader = document.querySelector('.contact h4');
 contactHeader.textContent = siteContent["contact"]["contact-h4"];
 
+//Updates contact Paragraphs
 const contactParagraphs = document.querySelectorAll('.contact p');
 contactParagraphs.forEach((item, index) => {
   if (index === 0) {
@@ -114,4 +115,6 @@ contactParagraphs.forEach((item, index) => {
   }
 });
 
-console.log(contactParagraphs);
+//Updates footer section
+const footerPara = document.querySelector('footer p');
+footerPara.textContent = siteContent.footer.copyright;
