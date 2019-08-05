@@ -69,8 +69,27 @@ function secondTensPlus() {
     secondTens.textContent = secondTensCounter;
 }
 
-const startButton = document.querySelector('button');
+const startButton = document.querySelector('.start');
 startButton.addEventListener('click', start);
+
+
+const resetButton = document.querySelector('.reset');
+resetButton.addEventListener('click', resetValues);
+
+function resetValues() {
+    secondTensCounter = 0;
+    secondOnesCounter = 0;
+    msHundredsCounter = 0;
+    msTensCounter = 0;
+    secondTens.textContent = "-";
+    secondOnes.textContent = "-";
+    msHundreds.textContent = "-";
+    msTens.textContent = "-";
+    secondTens.style.color = "black";
+    secondOnes.style.color = "black";
+    msHundreds.style.color = "black";
+    msTens.style.color = "black";
+}
 
 
 let clockTicker;
