@@ -10,24 +10,44 @@ let secondOnesCounter = 0;
 let msHundredsCounter = 0;
 let msTensCounter = 0;
 
-function reset(counter, digit) {
-    counter = 0;
-    digit.textContent = counter;
-}
+function startClock() {
+    msTensPlus();
+    if (msHundredsCounter === 5 && msTensCounter === 9) {
+        window.setTimeout(function () {
+            msHundredsCounter = 0;
+            msTensCounter = 0;
+            msHundreds.textContent = msHundredsCounter;
+            msTens.textContent = msTensCounter;
 
-// updating msTens
-function msTensPlus() {
-    msTensCounter++;
-    msTens.textContent = msTensCounter;
-    if (msTensCounter === 9) {
+            msHundredsPlus();
+        }, 10);
+    }
+    else if (msTensCounter === 9) {
         window.setTimeout(function () {
             msTensCounter = 0;
             msTens.textContent = msTensCounter;
-        }, 1000);
-        console.log("first");
+            msHundredsPlus();
+        }, 10);
     }
 }
 
-window.setInterval(msTensPlus, 1000);
+// updating counter functions
+function msTensPlus() {
+    msTensCounter++;
+    msTens.textContent = msTensCounter;
+}
+
+function msHundredsPlus() {
+    msHundredsCounter++;
+    msHundreds.textContent = msHundredsCounter;
+
+}
+
+function secondOnesPlus() {
+    secondOnesCounter++;
+    secondOnes.textContent = secondOnesCounter;
+}
+
+window.setInterval(startClock, 10);
 
 console.log(msTens);
