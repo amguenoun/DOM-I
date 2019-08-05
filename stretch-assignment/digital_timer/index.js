@@ -26,6 +26,7 @@ function startClock() {
             msHundreds.style.color = "red";
             msTens.style.color = "red";
             clearInterval(clockTicker);
+            startButton.disabled = false;
         }, 10)
     }
     else if (msHundredsCounter === 9 && msTensCounter === 9) {
@@ -68,6 +69,16 @@ function secondTensPlus() {
     secondTens.textContent = secondTensCounter;
 }
 
-const clockTicker = window.setInterval(startClock, 10);
+const startButton = document.querySelector('button');
+startButton.addEventListener('click', start);
+
+
+let clockTicker;
+function start() {
+    startButton.disabled = true;
+    clockTicker = window.setInterval(startClock, 10);
+}
+
+// const clockTicker = window.setInterval(startClock, 10);
 
 console.log(msTens);
