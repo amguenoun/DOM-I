@@ -47,7 +47,7 @@ links.forEach((item, index) => {
   item.textContent = siteContent["nav"][`nav-item-${index + 1}`];
 });
 
-//Update the cta-text for the cta section
+//Update the cta section
 //The cta h1 element
 const ctaHeader = document.querySelector(".cta-text h1");
 ctaHeader.textContent = siteContent["cta"]["h1"];
@@ -60,4 +60,21 @@ ctaButton.textContent = siteContent["cta"]["button"];
 const ctaImg = document.querySelector("#cta-img");
 ctaImg.src = siteContent["cta"]["img-src"];
 
-console.log(ctaImg);
+
+//Update the main content
+const topTextContent = document.querySelectorAll(".top-content .text-content");
+topTextContent.forEach((item, index) => {
+  if (index === 0) {
+    item.querySelector('h4').textContent = siteContent["main-content"]["features-h4"];
+    item.querySelector('p').textContent = siteContent["main-content"]["features-content"];
+  }
+  else {
+    item.querySelector('h4').textContent = siteContent["main-content"]["about-h4"];
+    item.querySelector('p').textContent = siteContent["main-content"]["about-content"];
+  }
+});
+
+
+
+
+console.log(topTextContent);
