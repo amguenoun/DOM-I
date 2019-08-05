@@ -62,8 +62,6 @@ const navBar = document.querySelector("nav");
 navBar.prepend(firstAnchor);
 navBar.appendChild(lastAnchor);
 
-console.log(navBar);
-
 //Update the cta section
 //The cta h1 element
 const ctaHeader = document.querySelector(".cta-text h1");
@@ -135,3 +133,9 @@ contactParagraphs.forEach((item, index) => {
 //Updates footer section
 const footerPara = document.querySelector('footer p');
 footerPara.textContent = siteContent.footer.copyright;
+
+
+//stretch goal
+const container = document.querySelector(".container");
+container.style.backgroundColor = "beige";
+console.log(container);
