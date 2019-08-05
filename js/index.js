@@ -96,4 +96,22 @@ bottomTextContent.forEach((item, index) => {
   }
 });
 
-console.log(bottomTextContent);
+//Updates the contact section
+//Updates contact header
+const contactHeader = document.querySelector('.contact h4');
+contactHeader.textContent = siteContent["contact"]["contact-h4"];
+
+const contactParagraphs = document.querySelectorAll('.contact p');
+contactParagraphs.forEach((item, index) => {
+  if (index === 0) {
+    item.textContent = siteContent.contact.address;
+  }
+  else if (index === 1) {
+    item.textContent = siteContent.contact.phone;
+  }
+  else {
+    item.textContent = siteContent.contact.email;
+  }
+});
+
+console.log(contactParagraphs);
