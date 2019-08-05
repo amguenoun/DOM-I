@@ -69,11 +69,20 @@ function secondTensPlus() {
     secondTens.textContent = secondTensCounter;
 }
 
-const startButton = document.querySelector('.start');
+
+//Stretch Goals
+
+//Making Buttons
+const startButton = document.createElement('button');
+startButton.textContent = "Touch Me to Start!";
+const resetButton = document.createElement('button');
+resetButton.textContent = "Touch Me to Reset!";
+
+document.querySelector('body').appendChild(startButton);
+document.querySelector('body').appendChild(resetButton);
+
+//Adding Event Listeners
 startButton.addEventListener('click', start);
-
-
-const resetButton = document.querySelector('.reset');
 resetButton.addEventListener('click', resetValues);
 
 function resetValues() {
@@ -97,7 +106,5 @@ function start() {
     startButton.disabled = true;
     clockTicker = window.setInterval(startClock, 10);
 }
-
-// const clockTicker = window.setInterval(startClock, 10);
 
 console.log(msTens);
