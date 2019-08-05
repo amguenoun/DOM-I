@@ -79,4 +79,21 @@ topTextContent.forEach((item, index) => {
 const middleImg = document.querySelector('#middle-img');
 middleImg.src = siteContent["main-content"]["middle-img-src"];
 
-console.log(topTextContent);
+//Updates bottom-content's text-content
+const bottomTextContent = document.querySelectorAll(".bottom-content .text-content");
+bottomTextContent.forEach((item, index) => {
+  if (index === 0) {
+    item.querySelector('h4').textContent = siteContent["main-content"]["services-h4"];
+    item.querySelector('p').textContent = siteContent["main-content"]["services-content"];
+  }
+  else if (index === 1) {
+    item.querySelector('h4').textContent = siteContent["main-content"]["product-h4"];
+    item.querySelector('p').textContent = siteContent["main-content"]["product-content"];
+  }
+  else {
+    item.querySelector('h4').textContent = siteContent["main-content"]["vision-h4"];
+    item.querySelector('p').textContent = siteContent["main-content"]["vision-content"];
+  }
+});
+
+console.log(bottomTextContent);
