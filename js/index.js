@@ -62,6 +62,7 @@ ctaImg.src = siteContent["cta"]["img-src"];
 
 
 //Update the main content
+//Updates top-content's text-content
 const topTextContent = document.querySelectorAll(".top-content .text-content");
 topTextContent.forEach((item, index) => {
   if (index === 0) {
@@ -74,7 +75,8 @@ topTextContent.forEach((item, index) => {
   }
 });
 
-
-
+//Update middle img
+const middleImg = document.querySelector('#middle-img');
+middleImg.src = siteContent["main-content"]["middle-img-src"];
 
 console.log(topTextContent);
