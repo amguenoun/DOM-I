@@ -45,7 +45,24 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 const links = document.querySelectorAll('nav a');
 links.forEach((item, index) => {
   item.textContent = siteContent["nav"][`nav-item-${index + 1}`];
+  item.style.color = "green";
 });
+
+//Creating new items to nav
+const firstAnchor = document.createElement('a');
+firstAnchor.textContent = "First";
+firstAnchor.href = "#";
+firstAnchor.style.color = "green"
+const lastAnchor = document.createElement('a');
+lastAnchor.textContent = "Last";
+lastAnchor.href = "#";
+lastAnchor.style.color = "green"
+
+const navBar = document.querySelector("nav");
+navBar.prepend(firstAnchor);
+navBar.appendChild(lastAnchor);
+
+console.log(navBar);
 
 //Update the cta section
 //The cta h1 element
